@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://deepakavadhani2:Karki%231@restapidb.ahooyxq.mongodb.net/"
+    "mongodb+srv://deepakavadhani2:Karki%231@restapidb.ahooyxq.mongodb.net/?retryWrites=true&w=majority&appName=RestAPIDB"
   )
   .then(() => {
     console.log("Connected to MongoDB");
