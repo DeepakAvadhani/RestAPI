@@ -23,5 +23,5 @@ mongoose
     });
   })
   .catch((err) => {
-    console.log("connection failed");
+    console.log("connection");
   });
