@@ -1,0 +1,44 @@
+name: Daily Auto Commits
+
+on:
+  schedule:
+    - cron: "13 16 * * *"   
+  workflow_dispatch:       
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Commit 1
+        run: |
+          echo "update1 - $(date)" >> updates.txt
+          git config user.name "deepakavadhani"
+          git config user.email "deepakavadhani2@github.com"
+          git add .
+          git commit -m "[fix] updated some files"
+          git push 
+
+      - name: Commit 2
+        run: |
+          echo "update2 - $(date)" >> updates.txt
+          git add .
+          git commit -m "[fix] updated some files"
+          git push
+
+      - name: Commit 3
+        run: |
+          echo "update3 - $(date)" >> updates.txt
+          git add .
+          git commit -m "[fix] updated some files"
+          git push
+
+      - name: Commit 4
+        run: |
+          echo "update4 - $(date)" >> updates.txt
+          git add .
+          git commit -m "[fix] updated some files" || echo "No changes to commit"
+          git push
