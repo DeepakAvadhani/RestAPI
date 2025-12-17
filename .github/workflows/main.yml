@@ -2,43 +2,26 @@ name: Daily Auto Commits
 
 on:
   schedule:
-    - cron: "20 16 * * *"   
-  workflow_dispatch:       
+    - cron: "30 18 * * *"   # 12:00 AM IST
+  workflow_dispatch:
 
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Commit 1
+      - name: Configure git
         run: |
-          echo "update1 - $(date)" >> updates.txt
           git config user.name "deepakavadhani"
-          git config user.email "deepakavadhani2@github.com"
-          git add .
-          git commit -m "[fix] updated some files"
-          git push 
+          git config user.email "deepakavadhani@users.noreply.github.com"
 
-      - name: Commit 2
+      - name: Daily commit
         run: |
-          echo "update2 - $(date)" >> updates.txt
-          git add .
-          git commit -m "[fix] updated some files"
-          git push
-
-      - name: Commit 3
-        run: |
-          echo "update3 - $(date)" >> updates.txt
-          git add .
-          git commit -m "[fix] updated some files"
-          git push
-
-      - name: Commit 4
-        run: |
-          echo "update4 - $(date)" >> updates.txt
-          git add .
-          git commit -m "[fix] updated some files" || echo "No changes to commit"
-          git push
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "daily auto commit"
+          git push origin main
