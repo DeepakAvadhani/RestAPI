@@ -24,4 +24,4 @@ jobs:
           echo "daily update - $(date)" >> updates.txt
           git add updates.txt
           git commit -m "daily auto commit"
-          git push origin main
+          git push origin master
