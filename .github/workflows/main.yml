@@ -23,5 +23,55 @@ jobs:
         run: |
           echo "daily update - $(date)" >> updates.txt
           git add updates.txt
-          git commit -m "daily auto commit"
+          git commit -m "[chores] daily auto commit"
+          git push origin master
+
+          
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
+          git push origin master
+
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
+          git push origin master
+
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
+          git push origin master
+
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
+          git push origin master
+
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
+          git push origin master
+
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
+          git push origin master
+
+      - name: Daily commit
+        run: |
+          echo "daily update - $(date)" >> updates.txt
+          git add updates.txt
+          git commit -m "[chores] updated updates.txt"
           git push origin master
