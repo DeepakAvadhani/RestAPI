@@ -69,9 +69,3 @@ jobs:
           git commit -m "[chores] updated updates.txt"
           git push origin master
 
-      - name: Daily commit
-        run: |
-          echo "daily update - $(date)" >> updates.txt
-          git add updates.txt
-          git commit -m "[chores] updated updates.txt"
-          git push origin master
